@@ -4,12 +4,11 @@ services:
   - docker
   
 script:
-  - cd texlive
-  - docker build -t kieluniphysik/texlive
+  - docker build -t texlive texlive
 
 after_success:
   - if [ "$TRAVIS_BRANCH" == "master" ]; then
-    cd texlive;
     docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD";
+    docker tag texlive kieluniphysik/texlive
     docker push kieluniphysik/texlive;
     fi
