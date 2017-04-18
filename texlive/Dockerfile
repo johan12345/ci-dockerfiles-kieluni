@@ -16,9 +16,7 @@ RUN wget http://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz \
   
 RUN wget https://github.com/mozilla/Fira/archive/master.zip \
   && unzip master.zip \
-  && sudo cp Fira-master/otf/* /usr/local/share/fonts/ \
-  && rm master.zip \
-  && rm -rf Fira-master
+  && sudo cp Fira-master/otf/* /usr/local/share/fonts/
   
 # Clean up
 RUN apt-get clean && rm -rf /var/lib/apt/lists/*
