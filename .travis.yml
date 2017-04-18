@@ -1,0 +1,15 @@
+sudo: required
+
+services:
+  - docker
+  
+script:
+  - cd texlive
+  - docker build -t kieluniphysik/texlive
+
+after_success:
+  - if [ "$TRAVIS_BRANCH" == "master" ]; then
+    cd texlive;
+    docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD";
+    docker push kieluniphysik/texlive;
+    fi
