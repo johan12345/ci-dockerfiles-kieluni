@@ -18,7 +18,7 @@ RUN wget https://github.com/mozilla/Fira/archive/master.zip \
   && unzip master.zip \
   && sudo cp Fira-master/otf/* /usr/local/share/fonts/ \
   && rm master.zip \
-  && rm -rf master
+  && rm -rf Fira-master
   
 # Clean up
 RUN apt-get clean && rm -rf /var/lib/apt/lists/*
