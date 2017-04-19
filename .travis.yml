@@ -1,12 +1,12 @@
 sudo: required
-
-services:
-  - docker
   
 matrix:
   include:
   - env: NAME=texlive
   - env: NAME=python2
+  
+services:
+  - docker
   
 script:
   - docker build -t $NAME $NAME
