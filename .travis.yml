@@ -6,6 +6,7 @@ services:
 env:
   - NAME=texlive
   - NAME=python2
+  - NAME=python3
 
 script:
   - docker build -t $NAME $NAME
