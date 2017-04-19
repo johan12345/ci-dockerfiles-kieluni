@@ -8,6 +8,7 @@ RUN apt-get update \
     python python-pip
     
 # install pip packages
+RUN pip install --upgrade setuptools pip
 RUN pip install numpy scipy matplotlib pandas ipython requests python-dateutil uncertainties
   
 # Clean up
