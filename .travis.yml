@@ -3,12 +3,17 @@ sudo: required
 services:
   - docker
   
+matrix:
+  include:
+  - env: NAME=texlive
+  - env: NAME=python2
+  
 script:
-  - docker build -t texlive texlive
+  - docker build -t $NAME $NAME
 
 after_success:
   - if [ "$TRAVIS_BRANCH" == "master" ]; then
     docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD";
-    docker tag texlive kieluniphysik/texlive;
-    docker push kieluniphysik/texlive;
+    docker tag $NAME kieluniphysik/$NAME;
+    docker push kieluniphysik/$NAME;
     fi
