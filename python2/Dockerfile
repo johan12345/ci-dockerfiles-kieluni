@@ -9,7 +9,7 @@ RUN apt-get update \
     
 # install pip packages
 RUN pip install --upgrade setuptools pip
-RUN pip install numpy scipy matplotlib pandas ipython requests python-dateutil uncertainties
+RUN pip install numpy scipy matplotlib pandas ipython requests python-dateutil uncertainties Sphinx pytest pytest-cov
   
 # Clean up
 RUN apt-get clean && rm -rf /var/lib/apt/lists/*
