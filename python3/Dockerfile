@@ -5,7 +5,7 @@ ENV DEBIAN_FRONTEND noninteractive
 # install packages
 RUN apt-get update \
   && apt-get install --no-install-recommends -y \
-    python python-dev build-essential nfs-common
+    python python-dev build-essential zlib1g-dev nfs-common
 
 # Get Python 3
 RUN wget https://www.python.org/ftp/python/3.6.1/Python-3.6.1.tgz && \
