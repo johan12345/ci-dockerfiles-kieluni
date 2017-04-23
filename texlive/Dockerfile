@@ -1,4 +1,4 @@
-FROM debian:jessie
+FROM jrei/systemd-debian:8
 MAINTAINER Johan von Forstner <johan.forstner@gmail.com>
 ENV DEBIAN_FRONTEND noninteractive
 COPY texlive.profile /
