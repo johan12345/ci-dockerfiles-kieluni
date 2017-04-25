@@ -1,4 +1,4 @@
-FROM debian:jessie
+FROM jrei/systemd-debian:8
 MAINTAINER Johan von Forstner <johan.forstner@gmail.com>
 ENV DEBIAN_FRONTEND noninteractive
 COPY texlive.profile /
@@ -6,7 +6,13 @@ COPY texlive.profile /
 # install packages
 RUN apt-get update \
   && apt-get install --no-install-recommends -y \
-    wget perl fontconfig libwww-perl python-pygments unzip
+    wget perl fontconfig libwww-perl python-pygments unzip locales
+    
+# utf-8
+RUN locale-gen C.UTF-8 && \
+    /usr/sbin/update-locale LANG=C.UTF-8 && \
+    apt-get remove -y locales
+ENV LANG C.UTF-8
 
 # install texlive    
 RUN wget http://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz \
