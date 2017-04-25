@@ -2,8 +2,8 @@ machine:
   services:
     - docker
 
-compile:
-  override:
+test:
+  post:
     - docker build -t texlive texlive
     - docker build -t python2 python2
     - docker build -t python3 python3
