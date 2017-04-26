@@ -2,6 +2,8 @@ FROM kieluniphysik/texlive
 MAINTAINER Johan von Forstner <johan.forstner@gmail.com>
 ENV DEBIAN_FRONTEND noninteractive
 
+ENV LANG C.UTF-8
+
 # install packages
 RUN apt-get update \
   && apt-get install --no-install-recommends -y \
