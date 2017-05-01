@@ -11,7 +11,7 @@ RUN apt-get update \
     
 # install pip packages
 RUN pip install --upgrade setuptools pip
-RUN pip install numpy scipy matplotlib pandas ipython requests python-dateutil uncertainties Sphinx numpydoc sphinx_rtd_theme pytest pytest-cov
+RUN pip install numpy scipy matplotlib pandas ipython requests python-dateutil uncertainties Pillow trackpy statsmodels Sphinx numpydoc sphinx_rtd_theme pytest pytest-cov
   
 # Clean up
 RUN apt-get clean && rm -rf /var/lib/apt/lists/*

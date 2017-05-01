@@ -19,7 +19,7 @@ RUN wget https://www.python.org/ftp/python/3.6.1/Python-3.6.1.tgz && \
     
 # install pip packages
 RUN pip3.6 install --upgrade setuptools pip
-RUN pip3.6 install numpy scipy matplotlib pandas ipython requests python-dateutil uncertainties Sphinx numpydoc sphinx_rtd_theme pytest pytest-cov Pygments
+RUN pip3.6 install numpy scipy matplotlib pandas ipython requests python-dateutil uncertainties Pillow trackpy statsmodels Sphinx numpydoc sphinx_rtd_theme pytest pytest-cov Pygments
   
 # Clean up
 RUN apt-get clean && rm -rf /var/lib/apt/lists/*
