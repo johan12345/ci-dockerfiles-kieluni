@@ -6,7 +6,7 @@ COPY texlive.profile /
 # install packages
 RUN apt-get update \
   && apt-get install --no-install-recommends -y \
-    wget perl fontconfig libwww-perl python-pygments unzip locales
+    wget perl fontconfig libwww-perl python-pygments unzip locales ssh
     
 # utf-8
 RUN locale-gen C.UTF-8 && \
