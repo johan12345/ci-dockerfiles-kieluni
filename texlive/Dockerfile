@@ -24,7 +24,7 @@ RUN wget https://github.com/mozilla/Fira/archive/master.zip \
   && unzip master.zip \
   && cp Fira-master/otf/* /usr/local/share/fonts/ \
   && rm -r Fira-master \
-  && rm Fira-master.zip
+  && rm master.zip
   
 RUN wget http://fontawesome.io/assets/font-awesome-4.7.0.zip \
   && unzip font-awesome-4.7.0.zip \
