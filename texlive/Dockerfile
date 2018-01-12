@@ -22,14 +22,14 @@ RUN wget http://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz \
   
 RUN wget https://github.com/mozilla/Fira/archive/master.zip \
   && unzip master.zip \
-  && cp Fira-master/otf/* /usr/local/share/fonts/
-  && rm -r Fira-master
+  && cp Fira-master/otf/* /usr/local/share/fonts/ \
+  && rm -r Fira-master \
   && rm Fira-master.zip
   
 RUN wget http://fontawesome.io/assets/font-awesome-4.7.0.zip \
   && unzip font-awesome-4.7.0.zip \
-  && cp font-awesome-4.7.0/fonts/FontAwesome.otf /usr/local/share/fonts/
-  && rm -r font-awesome-4.7.0
+  && cp font-awesome-4.7.0/fonts/FontAwesome.otf /usr/local/share/fonts/ \
+  && rm -r font-awesome-4.7.0 \
   && rm font-awesome-4.7.0.zip
   
 # Clean up
