@@ -10,9 +10,9 @@ RUN apt-get update \
     python python-dev build-essential zlib1g-dev libssl-dev nfs-common git
 
 # Get Python 3
-RUN wget https://www.python.org/ftp/python/3.6.1/Python-3.6.1.tgz && \
-	tar xvf Python-3.6.1.tgz && \
-	cd Python-3.6.1 && \
+RUN wget https://www.python.org/ftp/python/3.6.4/Python-3.6.4.tgz && \
+	tar xvf Python-3.6.4.tgz && \
+	cd Python-3.6.4 && \
 	./configure --enable-optimizations && \
 	make -j4 && \
 	make altinstall
