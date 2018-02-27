@@ -26,7 +26,7 @@ RUN wget https://github.com/mozilla/Fira/archive/master.zip \
   && rm -r Fira-master \
   && rm master.zip
   
-RUN wget http://fontawesome.io/assets/font-awesome-4.7.0.zip \
+RUN wget https://fontawesome.com/v4.7.0/assets/font-awesome-4.7.0.zip \
   && unzip font-awesome-4.7.0.zip \
   && cp font-awesome-4.7.0/fonts/FontAwesome.otf /usr/share/fonts/truetype \
   && rm -r font-awesome-4.7.0 \
