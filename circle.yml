@@ -1,41 +1,30 @@
-# This configuration was automatically generated from a CircleCI 1.0 config.
-# It should include any build commands you had along with commands that CircleCI
-# inferred from your project structure. We strongly recommend you read all the
-# comments in this file to understand the structure of CircleCI 2.0, as the idiom
-# for configuration has changed substantially in 2.0 to allow arbitrary jobs rather
-# than the prescribed lifecycle of 1.0. In general, we recommend using this generated
-# configuration as a reference rather than using it in production, though in most
-# cases it should duplicate the execution of your original 1.0 config.
-defaults: &defaults
+defaults:
   docker:
-    - image: circleci/build-image:ubuntu-14.04-XXL-upstart-1189-5614f37
+    - image: docker
 
 version: 2
 jobs:
   build-texlive:
-    <<: *defaults
     steps:
     - checkout
-    - run:
-        command: 'sudo docker info >/dev/null 2>&1 || sudo service docker start; '
+	- setup_remote_docker:
+        docker_layer_caching: true
     - run: docker build -t texlive texlive
     - run: docker tag texlive kieluniphysik/texlive
     - run: docker push kieluniphysik/texlive
   build-python2:
-    <<: *defaults
     steps:
     - checkout
-    - run:
-        command: 'sudo docker info >/dev/null 2>&1 || sudo service docker start; '
+	- setup_remote_docker:
+        docker_layer_caching: true
     - run: docker build -t python2 python2
     - run: docker tag python2 kieluniphysik/python2
     - run: docker push kieluniphysik/python2
   build-python3:
-    <<: *defaults
     steps:
     - checkout
-    - run:
-        command: 'sudo docker info >/dev/null 2>&1 || sudo service docker start; '
+	- setup_remote_docker:
+        docker_layer_caching: true
     - run: docker build -t python3 python3
     - run: docker tag python3 kieluniphysik/python3
     - run: docker push kieluniphysik/python3
