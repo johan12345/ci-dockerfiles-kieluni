@@ -1,29 +1,32 @@
-defaults:
+defaults: &defaults
   docker:
     - image: docker
 
 version: 2
 jobs:
   build-texlive:
+    <<: *defaults
     steps:
     - checkout
-	- setup_remote_docker:
+    - setup_remote_docker:
         docker_layer_caching: true
     - run: docker build -t texlive texlive
     - run: docker tag texlive kieluniphysik/texlive
     - run: docker push kieluniphysik/texlive
   build-python2:
+    <<: *defaults
     steps:
     - checkout
-	- setup_remote_docker:
+    - setup_remote_docker:
         docker_layer_caching: true
     - run: docker build -t python2 python2
     - run: docker tag python2 kieluniphysik/python2
     - run: docker push kieluniphysik/python2
   build-python3:
+    <<: *defaults
     steps:
     - checkout
-	- setup_remote_docker:
+    - setup_remote_docker:
         docker_layer_caching: true
     - run: docker build -t python3 python3
     - run: docker tag python3 kieluniphysik/python3
