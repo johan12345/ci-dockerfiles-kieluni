@@ -12,6 +12,7 @@ jobs:
         docker_layer_caching: true
     - run: echo y | docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD";
     - run: docker build -t texlive texlive
+    - run: docker tag texlive kieluniphysik/texlive
     - run: docker tag texlive kieluniphysik/texlive:2018
     - run: docker push kieluniphysik/texlive
   build-python2:
