@@ -10,7 +10,8 @@ RUN apt-get update \
     python python-pip python-dev build-essential nfs-common git
     
 # install pip packages
-RUN pip install numpy scipy matplotlib pandas ipython requests python-dateutil uncertainties Pillow trackpy Sphinx numpydoc sphinx_rtd_theme pytest pytest-cov \
+RUN pip install --upgrade setuptools \
+  && pip install numpy scipy matplotlib pandas ipython requests python-dateutil uncertainties Pillow trackpy Sphinx numpydoc sphinx_rtd_theme pytest pytest-cov \
   && pip install statsmodels
   
 # Clean up
