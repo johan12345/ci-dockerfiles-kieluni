@@ -11,7 +11,7 @@ RUN apt-get update \
     
 # install pip packages
 RUN pip3 install --upgrade setuptools \
-  && pip3 install numpy scipy matplotlib pandas ipython requests python-dateutil uncertainties Pillow trackpy Sphinx numpydoc sphinx_rtd_theme pytest pytest-cov \
+  && pip3 install numpy scipy matplotlib pandas ipython requests python-dateutil uncertainties Pillow trackpy Sphinx numpydoc sphinx_rtd_theme pytest pytest-cov pytest-mpl \
   && pip3 install statsmodels
   
 # Clean up

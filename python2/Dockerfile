@@ -11,7 +11,7 @@ RUN apt-get update \
     
 # install pip packages
 RUN pip install --upgrade setuptools \
-  && pip install numpy scipy matplotlib pandas ipython requests python-dateutil uncertainties Pillow trackpy Sphinx numpydoc sphinx_rtd_theme pytest pytest-cov \
+  && pip install numpy scipy matplotlib pandas ipython requests python-dateutil uncertainties Pillow trackpy Sphinx numpydoc sphinx_rtd_theme pytest pytest-cov pytest-mpl \
   && pip install statsmodels
 
 RUN mkdir -p /root/.config/matplotlib && echo "backend : Agg" > /root/.config/matplotlib/matplotlibrc
