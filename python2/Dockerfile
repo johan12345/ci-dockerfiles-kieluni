@@ -7,7 +7,7 @@ ENV LANG C.UTF-8
 # install packages
 RUN apt-get update \
   && apt-get install --no-install-recommends -y \
-    python python-pip python-dev python-setuptools python-wheel build-essential nfs-common git
+    python python-pip python-dev python-setuptools python-wheel python-venv build-essential nfs-common git
     
 # install pip packages
 RUN pip install --upgrade setuptools \
