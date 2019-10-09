@@ -19,6 +19,14 @@ RUN wget https://github.com/mozilla/Fira/archive/master.zip \
   && cp Fira-master/otf/* /usr/share/fonts/truetype \
   && rm -r Fira-master \
   && rm master.zip
+
+RUN wget hhttps://www.fontsquirrel.com/fonts/download/lato -O lato.zip \
+  && unzip lato.zip -d /usr/share/fonts/truetype -x "*.txt" \
+  && rm lato.zip
+
+RUN wget hhttps://www.fontsquirrel.com/fonts/download/raleway -O raleway.zip \
+  && unzip raleway.zip -d /usr/share/fonts/truetype -x "*.txt" \
+  && rm raleway.zip
   
 RUN fc-cache
   
