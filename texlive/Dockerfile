@@ -20,11 +20,11 @@ RUN wget https://github.com/mozilla/Fira/archive/master.zip \
   && rm -r Fira-master \
   && rm master.zip
 
-RUN wget hhttps://www.fontsquirrel.com/fonts/download/lato -O lato.zip \
+RUN wget https://www.fontsquirrel.com/fonts/download/lato -O lato.zip \
   && unzip lato.zip -d /usr/share/fonts/truetype -x "*.txt" \
   && rm lato.zip
 
-RUN wget hhttps://www.fontsquirrel.com/fonts/download/raleway -O raleway.zip \
+RUN wget https://www.fontsquirrel.com/fonts/download/raleway -O raleway.zip \
   && unzip raleway.zip -d /usr/share/fonts/truetype -x "*.txt" \
   && rm raleway.zip
   
