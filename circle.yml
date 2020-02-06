@@ -34,6 +34,16 @@ jobs:
     - run: docker build -t python3 python3
     - run: docker tag python3 kieluniphysik/python3
     - run: docker push kieluniphysik/python3
+  build-python3:
+    <<: *defaults
+    steps:
+    - checkout
+    - setup_remote_docker:
+        docker_layer_caching: true
+    - run: echo y | docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD";
+    - run: docker build -t hugo hugo
+    - run: docker tag hugo kieluniphysik/hugo
+    - run: docker push kieluniphysik/hugo
 workflows:
   version: 2
   build_all:
@@ -41,3 +51,4 @@ workflows:
       - build-texlive
       - build-python2
       - build-python3
+      - build-hugo
