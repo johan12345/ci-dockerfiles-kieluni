@@ -10,13 +10,13 @@ ENV HUGO_DOWNLOAD_URL https://github.com/gohugoio/hugo/releases/download/v${HUGO
 # install packages
 RUN apt-get update \
   && apt-get install --no-install-recommends -y \
-    python3 python3-pip ca-certificates rsync ruby-full zlib1g-dev
-RUN sudo gem install html-proofer --no-document
+    wget git make ssh python3 python3-pip ca-certificates rsync ruby-full zlib1g-dev
+RUN gem install html-proofer --no-document
 
 # install hugo
 RUN wget $HUGO_DOWNLOAD_URL && \
     tar -xzf hugo_extended_${HUGO_VERSION}_Linux-64bit.tar.gz && \
-    sudo mv hugo /usr/bin/hugo && \
+    mv hugo /usr/bin/hugo && \
     rm hugo_extended_${HUGO_VERSION}_Linux-64bit.tar.gz LICENSE README.md
     
 # install pip packages
