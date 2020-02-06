@@ -10,7 +10,7 @@ ENV HUGO_DOWNLOAD_URL https://github.com/gohugoio/hugo/releases/download/v${HUGO
 # install packages
 RUN apt-get update \
   && apt-get install --no-install-recommends -y \
-    wget git make ssh python3 python3-pip ca-certificates rsync ruby-full zlib1g-dev
+    wget git make openssh-client python3 python3-pip ca-certificates rsync ruby-full zlib1g-dev build-essential tar unzip wget zip
 RUN gem install html-proofer --no-document
 
 # install hugo
