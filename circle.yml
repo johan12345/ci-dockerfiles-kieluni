@@ -18,8 +18,7 @@ jobs:
     <<: *defaults
     steps:
     - checkout
-    - setup_remote_docker:
-        docker_layer_caching: true
+    - setup_remote_docker
     - run: echo y | docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD";
     - run: docker build -t python2 python2
     - run: docker tag python2 kieluniphysik/python2
@@ -28,8 +27,7 @@ jobs:
     <<: *defaults
     steps:
     - checkout
-    - setup_remote_docker:
-        docker_layer_caching: true
+    - setup_remote_docker
     - run: echo y | docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD";
     - run: docker build -t python3 python3
     - run: docker tag python3 kieluniphysik/python3
@@ -38,8 +36,7 @@ jobs:
     <<: *defaults
     steps:
     - checkout
-    - setup_remote_docker:
-        docker_layer_caching: true
+    - setup_remote_docker
     - run: echo y | docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD";
     - run: docker build -t hugo hugo
     - run: docker tag hugo kieluniphysik/hugo
