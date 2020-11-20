@@ -1,4 +1,4 @@
-FROM debian:testing-slim
+FROM debian:unstable-slim
 MAINTAINER Johan von Forstner <johan.forstner@gmail.com>
 ENV DEBIAN_FRONTEND noninteractive
 
@@ -6,7 +6,8 @@ ENV DEBIAN_FRONTEND noninteractive
 RUN mkdir -p /usr/share/man/man1 \
   && apt-get update \
   && apt-get install -y \
-    wget perl git fontconfig libwww-perl python3-pygments unzip locales ssh pdftk-java ghostscript make fonts-font-awesome texlive-full
+    wget perl git fontconfig libwww-perl python3-pygments unzip locales ssh pdftk-java ghostscript make fonts-font-awesome \
+  && apt-get install -y texlive-full
     
 # utf-8
 RUN locale-gen C.UTF-8 && \
