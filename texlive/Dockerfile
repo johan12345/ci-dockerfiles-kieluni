@@ -1,4 +1,4 @@
-FROM debian:unstable-slim
+FROM debian:unstable
 MAINTAINER Johan von Forstner <johan.forstner@gmail.com>
 ENV DEBIAN_FRONTEND noninteractive
 
