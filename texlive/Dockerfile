@@ -6,7 +6,7 @@ ENV DEBIAN_FRONTEND noninteractive
 RUN mkdir -p /usr/share/man/man1 \
   && apt-get update \
   && apt-get install -y apt-utils \
-  && apt-get install -y libpaper1
+  && apt-get install -y libpaper1; exit 0
 
 # fix libpaper bug - https://askubuntu.com/questions/1241362/fix-package-post-installation-script-subprocess-returned-error-exit-status-10-fo
 RUN rm /var/lib/dpkg/info/libpaper1* \
