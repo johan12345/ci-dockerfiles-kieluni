@@ -5,13 +5,7 @@ ENV DEBIAN_FRONTEND noninteractive
 # install packages
 RUN mkdir -p /usr/share/man/man1 \
   && apt-get update \
-  && apt-get install -y apt-utils \
-  && apt-get install -y libpaper1; exit 0
-
-# fix libpaper bug - https://askubuntu.com/questions/1241362/fix-package-post-installation-script-subprocess-returned-error-exit-status-10-fo
-RUN rm /var/lib/dpkg/info/libpaper1* \
-  && dpkg --configure -D 777 libpaper1 \
-  && apt -f install
+  && apt-get install -y apt-utils libpaper1
   
 RUN apt-get install -y \
     wget perl git fontconfig libwww-perl python3-pygments unzip locales ssh pdftk-java ghostscript make fonts-font-awesome texlive-full
