@@ -9,7 +9,7 @@ RUN mkdir -p /usr/share/man/man1 \
   && apt-get install -y libpaper1
 
 # fix libpaper bug - https://askubuntu.com/questions/1241362/fix-package-post-installation-script-subprocess-returned-error-exit-status-10-fo
-RUN rm /var/lib/dpkg/info/libpaper1*
+RUN rm /var/lib/dpkg/info/libpaper1* \
   && dpkg --configure -D 777 libpaper1 \
   && apt -f install
   
