@@ -1,10 +1,10 @@
-FROM debian:unstable-slim
+FROM debian:stable-slim
 MAINTAINER Johan von Forstner <johan.forstner@gmail.com>
 ENV DEBIAN_FRONTEND noninteractive
 
 ENV LANG C.UTF-8
 
-ENV HUGO_VERSION 0.64.0
+ENV HUGO_VERSION 0.78.2
 ENV HUGO_DOWNLOAD_URL https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_Linux-64bit.tar.gz
 
 # install packages
