@@ -7,7 +7,13 @@ ENV LANG C.UTF-8
 # install packages
 RUN apt-get update \
   && apt-get install --no-install-recommends -y \
-    python3 python3-pip python3-dev python3-setuptools python3-wheel python3-virtualenv python3-venv build-essential zlib1g-dev libssl-dev nfs-common git cmake pkg-config libarrow-dev
+    python3 python3-pip python3-dev python3-setuptools python3-wheel python3-virtualenv python3-venv build-essential zlib1g-dev libssl-dev nfs-common git cmake pkg-config
+
+# install libarrow
+RUN wget https://apache.bintray.com/arrow/$(lsb_release --id --short | tr 'A-Z' 'a-z')/apache-arrow-archive-keyring-latest-$(lsb_release --codename --short).deb \
+  && sudo apt install -y -V ./apache-arrow-archive-keyring-latest-$(lsb_release --codename --short).deb \
+  && sudo apt update \
+  && sudo apt install -y -V libarrow-dev
     
 # install pip packages
 RUN pip3 install --upgrade setuptools \
