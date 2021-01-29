@@ -7,7 +7,7 @@ ENV LANG C.UTF-8
 # install packages
 RUN apt-get update \
   && apt-get install --no-install-recommends -y \
-    python3 python3-pip python3-dev python3-setuptools python3-wheel python3-virtualenv python3-venv build-essential zlib1g-dev libssl-dev nfs-common git
+    python3 python3-pip python3-dev python3-setuptools python3-wheel python3-virtualenv python3-venv build-essential zlib1g-dev libssl-dev nfs-common git cmake
     
 # install pip packages
 RUN pip3 install --upgrade setuptools \
