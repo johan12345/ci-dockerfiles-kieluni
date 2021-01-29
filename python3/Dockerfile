@@ -8,7 +8,7 @@ ENV LANG C.UTF-8
 RUN apt-get update \
   && apt-get install --no-install-recommends -y \
     python3 python3-pip python3-dev python3-setuptools python3-wheel python3-virtualenv python3-venv build-essential zlib1g-dev libssl-dev nfs-common git cmake pkg-config ca-certificates lsb-release wget \
-    libc6 libgcc1 libgl1 libglib-2.0-0 libice6 libsm6 libstdc++6 libx11-6 libxext6 libxrender1
+    libc6 libgcc1 libgl1 libglib2.0-0 libice6 libsm6 libstdc++6 libx11-6 libxext6 libxrender1
     
 # install pip packages
 RUN python3 -m pip install --upgrade setuptools wheel pip \
