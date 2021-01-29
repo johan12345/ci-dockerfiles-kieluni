@@ -11,9 +11,9 @@ RUN apt-get update \
 
 # install libarrow
 RUN wget https://apache.bintray.com/arrow/$(lsb_release --id --short | tr 'A-Z' 'a-z')/apache-arrow-archive-keyring-latest-$(lsb_release --codename --short).deb \
-  && sudo apt install -y -V ./apache-arrow-archive-keyring-latest-$(lsb_release --codename --short).deb \
-  && sudo apt update \
-  && sudo apt install -y -V libarrow-dev
+  && apt install -y -V ./apache-arrow-archive-keyring-latest-$(lsb_release --codename --short).deb \
+  && apt update \
+  && apt install -y -V libarrow-dev
     
 # install pip packages
 RUN pip3 install --upgrade setuptools \
